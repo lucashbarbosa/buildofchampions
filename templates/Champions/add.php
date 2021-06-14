@@ -20,6 +20,8 @@
                     echo $this->Form->control('name');
                     echo $this->Form->control('image');
                     echo $this->Form->control('description');
+                    echo $this->Form->control('lane');
+                    
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

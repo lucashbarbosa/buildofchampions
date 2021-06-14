@@ -15,6 +15,7 @@
                     <th><?= $this->Paginator->sort('name') ?></th>
                     <th><?= $this->Paginator->sort('image') ?></th>
                     <th><?= $this->Paginator->sort('description') ?></th>
+                    <th><?= $this->Paginator->sort('lane') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -25,6 +26,7 @@
                     <td><?= h($champion->name) ?></td>
                     <td><?= h($champion->image) ?></td>
                     <td><?= h($champion->description) ?></td>
+                    <td><?= h($champion->lane) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $champion->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $champion->id]) ?>

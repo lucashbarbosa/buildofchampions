@@ -28,6 +28,10 @@
                     <td><?= h($champion->description) ?></td>
                 </tr>
                 <tr>
+                    <th><?= __('Lane') ?></th>
+                    <td><?= h($champion->lane) ?></td>
+                </tr>
+                <tr>
                     <th><?= __('Id') ?></th>
                     <td><?= $this->Number->format($champion->id) ?></td>
                 </tr>

@@ -66,8 +66,13 @@ class ChampionsTable extends Table
 
         $validator
             ->scalar('description')
-            ->maxLength('description', 255)
+            ->maxLength('description', 1000)
             ->allowEmptyString('description');
+
+        $validator
+            ->scalar('lane')
+            ->maxLength('lane', 20)
+            ->allowEmptyString('lane');
 
         return $validator;
     }

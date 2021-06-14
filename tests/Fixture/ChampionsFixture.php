@@ -21,6 +21,7 @@ class ChampionsFixture extends TestFixture
         'name' => ['type' => 'string', 'length' => 50, 'null' => true, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
         'image' => ['type' => 'string', 'length' => 255, 'null' => true, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
         'description' => ['type' => 'string', 'length' => 255, 'null' => true, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
+        'lane' => ['type' => 'string', 'length' => 20, 'null' => true, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
         ],
@@ -43,6 +44,7 @@ class ChampionsFixture extends TestFixture
                 'name' => 'Lorem ipsum dolor sit amet',
                 'image' => 'Lorem ipsum dolor sit amet',
                 'description' => 'Lorem ipsum dolor sit amet',
+                'lane' => 'Lorem ipsum dolor sit amet',
             ],
         ];
         parent::init();

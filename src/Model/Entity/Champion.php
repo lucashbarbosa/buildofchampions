@@ -12,6 +12,7 @@ use Cake\ORM\Entity;
  * @property string|null $name
  * @property string|null $image
  * @property string|null $description
+ * @property string|null $lane
  */
 class Champion extends Entity
 {
@@ -28,5 +29,6 @@ class Champion extends Entity
         'name' => true,
         'image' => true,
         'description' => true,
+        'lane' => true,
     ];
 }
