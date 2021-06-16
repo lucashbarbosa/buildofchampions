@@ -1,9 +1,12 @@
 <?php
 declare(strict_types=1);
 
+
 namespace App\Controller;
 use Cake\Event\EventInterface;
 use Cake\Datasource\ConnectionManager;
+
+error_reporting(0);
 /*
  * Champions Controller
  *
@@ -12,9 +15,6 @@ use Cake\Datasource\ConnectionManager;
  */
 class ChampionsController extends AppController
 {
-
-
-
     public function beforeFilter(EventInterface $event)
     {
         parent::beforeFilter($event);
@@ -57,45 +57,28 @@ class ChampionsController extends AppController
         $this->disableAutoRender();
         $conn = ConnectionManager::get("default");
 
-
-
         $champion = $conn->execute("SELECT * FROM champions WHERE id = $id")->fetch("assoc");
 
-
         $response["champion"] = $champion;
-
-
-
-
 
         $builds = $conn->execute("SELECT cb.*, b.name, b.id as build_column_id FROM champion_builds cb
                    INNER JOIN builds b
                    ON cb.build_id = b.id
                    WHERE champion_id = $id")->fetchAll("assoc");
 
-        debug($response);
-
-
         foreach($builds as $key => $build){
             $listBuild = new \ArrayObject();
             $b[$key] = $build;
-
 
             $items = $conn->execute("SELECT i.* FROM builds_items bi
                 INNER JOIN items i
                 ON i.id = bi.item_id
                 WHERE bi.build_id = " .$build['build_id'])->fetchAll("assoc");
             $b[$key]['items'] = $items;
-
         }
         $response['champion']['builds'] = $b;
 
-        debug($response);
-//        debug($builds);
-//        debug($listBuild);
-        die();
-
-
+        echo $this->jsonResponse($response, 200);
     }
 
     /**
