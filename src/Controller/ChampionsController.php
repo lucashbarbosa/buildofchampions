@@ -96,7 +96,16 @@ class ChampionsController extends AppController
 
 //
     }
+    public function listAll()
+    {
+        $this->disableAutoRender();
+        $champions = $this->paginate($this->Champions);
 
+
+        echo $this->jsonResponse($champions, 200);
+
+//
+    }
     /**
      * View method
      *
